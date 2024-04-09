@@ -8,26 +8,26 @@ import { Repository } from 'typeorm';
 export class DoctorService {
   constructor(
     @InjectRepository(Doctor)
-    private doctorRepository: Repository<Doctor>,
+    private repository: Repository<Doctor>,
   ) {}
 
   createUser(doctor: DoctorDto): Promise<Doctor> {
-    return this.doctorRepository.save(doctor);
+    return this.repository.save(doctor);
   }
 
   findAll(): Promise<Doctor[]> {
-    return this.doctorRepository.find();
+    return this.repository.find();
   }
 
   findOne(id: number): Promise<Doctor | null> {
-    return this.doctorRepository.findOneBy({ id });
+    return this.repository.findOneBy({ id });
   }
 
   remove(id: number) {
-    return this.doctorRepository.delete(id);
+    return this.repository.delete(id);
   }
 
   updateUser(id: number, user: DoctorDto) {
-    return this.doctorRepository.update(id, user);
+    return this.repository.update(id, user);
   }
 }
