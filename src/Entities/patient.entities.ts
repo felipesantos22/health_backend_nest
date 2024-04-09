@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import { Consultation } from './consultation.entities';
 
 @Entity()
 export class Patient {
@@ -13,4 +14,7 @@ export class Patient {
 
   @Column({ default: true })
   isActive: boolean;
+
+  @OneToMany(() => Consultation, (consultation) => consultation.patient)
+  consultation: Consultation[];
 }

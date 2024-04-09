@@ -9,10 +9,6 @@ import { PatientModule } from './patient.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'sqlite',
-      //host: 'localhost',
-      //port: 3306,
-      //username: 'root',
-      //password: 'password',
       database: './src/data/database.sqlite',
       entities: [Doctor, Patient],
       synchronize: true,
@@ -20,7 +16,5 @@ import { PatientModule } from './patient.module';
     DoctorModule,
     PatientModule
   ],
-  // controllers: [DoctorController],
-  // providers: [DoctorService],
 })
 export class AppModule {}
