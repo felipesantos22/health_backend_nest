@@ -27,7 +27,7 @@ export class DoctorService {
     return this.repository.delete(id);
   }
 
-  updateUser(id: number, user: DoctorDto) {
-    return this.repository.update(id, user);
+  updateUser(id: number, doctor: DoctorDto) {
+    return this.repository.update(id, doctor);
   }
 }
